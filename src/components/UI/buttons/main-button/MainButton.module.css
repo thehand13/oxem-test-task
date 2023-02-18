@@ -1,0 +1,8 @@
+.mainButton {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 12px 24px;
+  border-radius: 40px;
+}

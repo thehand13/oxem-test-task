@@ -1,0 +1,62 @@
+.leasingForm {
+  background-color: aquamarine;
+}
+
+.leasingFormTitle {
+  max-width: 650px;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 49px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.inputContainer {
+  display: flex;
+}
+
+.outputContainer {
+  display: flex;
+}
+
+@media (min-width: 1441px) {
+  .inputContainer {
+  }
+
+  .outputContainer {
+  }
+}
+
+@media (max-width: 1440px) {
+  .inputContainer {
+    flex-direction: column;
+  }
+
+  .outputContainer {
+  }
+}
+
+@media (max-width: 1024px) {
+  .inputContainer {
+  }
+
+  .outputContainer {
+  }
+}
+
+@media (max-width: 768px) {
+  .inputContainer {
+  }
+
+  .outputContainer {
+  }
+}
+
+@media (max-width: 320px) {
+  .inputContainer {
+  }
+
+  .outputContainer {
+    flex-direction: column;
+  }
+}

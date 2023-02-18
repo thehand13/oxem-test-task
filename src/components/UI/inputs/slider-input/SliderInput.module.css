@@ -1,0 +1,26 @@
+.sliderInput {
+}
+
+.sliderLabel {
+  display: block;
+}
+
+.sliderNumber {
+  display: block;
+}
+
+.sliderRange {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: #e1e1e1;
+  outline: 0;
+  height: 1px;
+  display: block;
+}
+
+.sliderRange::-webkit-slider-thumb {
+  cursor: pointer;
+}
+
+.sliderSign {
+}

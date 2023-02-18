@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+}
+
+.mainTitle {
+}
+
+.company {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.9200000166893005px;
+  text-align: left;
+}
+
+.navigation {
+}
+
+.navList {
+  color: #575757;
+  display: flex;
+}
+
+.navItem {
+  color: #575757;
+  list-style: none;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+}

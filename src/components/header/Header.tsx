@@ -1,25 +1,32 @@
+import { INavLink } from '@/models/nav-link';
 import Link from 'next/link';
 import React from 'react';
 import MainButton from '../UI/buttons/main-button/MainButton';
+import styles from './Header.module.css';
+
+const navLinks: INavLink[] = [
+  { route: '/leasing', title: 'Лизинг' },
+  { route: '/catalog', title: 'Каталог' },
+  { route: '/about-us', title: 'О нас' },
+];
 
 const Header = () => {
   return (
-    <header>
-      <h1>Leasing Car</h1>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/leasing">Лизинг</Link>
-          </li>
-          <li>
-            <Link href="/catalog">Каталог</Link>
-          </li>
-          <li>
-            <Link href="/about-us">О нас</Link>
-          </li>
+    <header className={styles.header}>
+      <div className={styles.mainTitle}>LeasingCar</div>
+      <div className={styles.company}>ЛИЗИНГОВАЯ КОМПАНИЯ</div>
+      <nav className={styles.navigation}>
+        <ul className={styles.navList}>
+          {navLinks.map((navLink) => (
+            <li className={styles.navItem} key={navLink.route}>
+              <Link className={styles.navItemLink} href={navLink.route}>
+                {navLink.title}
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
-      <MainButton buttonColor={'second'}>Оставить заявку</MainButton>
+      <MainButton buttonColor={'firstUIButton'}>Оставить заявку</MainButton>
     </header>
   );
 };
