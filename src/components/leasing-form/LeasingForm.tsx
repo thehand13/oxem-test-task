@@ -70,8 +70,8 @@ const LeasingForm = () => {
           outputValue={monthPayState}
           label={'Ежемесячный платёж от'}
         />
+        <MainButton buttonColor={'firstUIButton'}>Оставить заявку</MainButton>
       </div>
-      <MainButton buttonColor={'firstUIButton'}>Оставить заявку</MainButton>
     </form>
   );
 };

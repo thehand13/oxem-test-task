@@ -1,0 +1,51 @@
+.imageContainer {
+  position: absolute;
+  width: 841px;
+  height: 100%;
+  top: 0px;
+  right: 0px;
+  border-radius: 32px;
+  overflow: hidden;
+}
+
+.slideTitle {
+  position: relative;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 90%;
+}
+
+.slideDescription {
+  position: relative;
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.navButton {
+  position: absolute;
+}
+
+@media (max-width: 1024px) {
+  .imageContainer {
+    width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageContainer {
+  }
+}
+
+@media (max-width: 320px) {
+  .imageContainer {
+    position: relative;
+    top: -50px;
+    width: 462px;
+    height: 261px;
+    left: -125px;
+    top: 4px;
+  }
+}

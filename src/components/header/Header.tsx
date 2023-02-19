@@ -1,6 +1,7 @@
 import { INavLink } from '@/models/nav-link';
 import Link from 'next/link';
 import React from 'react';
+import MainIcon from '../icons/MainIcon';
 import MainButton from '../UI/buttons/main-button/MainButton';
 import styles from './Header.module.css';
 
@@ -13,7 +14,7 @@ const navLinks: INavLink[] = [
 const Header = () => {
   return (
     <header className={styles.header}>
-      <div className={styles.mainTitle}>LeasingCar</div>
+      <MainIcon />
       <div className={styles.company}>ЛИЗИНГОВАЯ КОМПАНИЯ</div>
       <nav className={styles.navigation}>
         <ul className={styles.navList}>

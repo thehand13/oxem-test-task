@@ -1,3 +1,7 @@
 .sliderSection {
-  color: red;
+  color: #ffffff;
+  background-color: #000000;
+  height: 473px;
+  border-radius: 32px;
+  position: relative;
 }

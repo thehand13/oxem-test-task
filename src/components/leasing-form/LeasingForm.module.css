@@ -1,5 +1,4 @@
 .leasingForm {
-  background-color: aquamarine;
 }
 
 .leasingFormTitle {
@@ -13,18 +12,12 @@
 
 .inputContainer {
   display: flex;
+  justify-content: space-between;
 }
 
 .outputContainer {
   display: flex;
-}
-
-@media (min-width: 1441px) {
-  .inputContainer {
-  }
-
-  .outputContainer {
-  }
+  justify-content: space-between;
 }
 
 @media (max-width: 1440px) {

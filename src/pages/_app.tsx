@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app';
 import localFont from '@next/font/local';
 import Header from '@/components/header/Header';
+import '../styles/globals.css';
 
 const font = localFont({
   src: [
@@ -24,9 +25,11 @@ const font = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={font.className}>
+    <div className={font.className}>
       <Header />
-      <Component {...pageProps} />
-    </main>
+      <main>
+        <Component {...pageProps} />
+      </main>
+    </div>
   );
 }

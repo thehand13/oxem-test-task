@@ -1,0 +1,23 @@
+.mainIcon {
+  display: flex;
+
+  width: 200px;
+  height: 35px;
+}
+
+@media (max-width: 1024px) {
+  .mainIcon {
+    width: 166px;
+    height: 29px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainIcon {
+  }
+}
+
+@media (max-width: 320px) {
+  .mainIcon {
+  }
+}
