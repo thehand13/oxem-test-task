@@ -11,11 +11,17 @@ const Slide: React.FC<ISlideComponents> = (props) => {
       <div className={styles.imageContainer}>
         <Image src={props.imageUrl} alt={props.title} fill />
       </div>
-      <h1 className={styles.slideTitle}>{props.title}</h1>
-      <p className={styles.slideDescription}>{props.description}</p>
-      <MainButton buttonColor={'firstUIButton'}>{props.buttonText}</MainButton>
-      <button className={styles.navButton}></button>
-      <button className={styles.navButton}></button>
+      <div className={styles.infoContainer}>
+        <h1 className={styles.slideTitle}>{props.title}</h1>
+        <p className={styles.slideDescription}>{props.description}</p>
+        <MainButton buttonColor={'firstUIButton'}>
+          {props.buttonText}
+        </MainButton>
+      </div>
+      <div className={styles.navContainer}>
+        <button className={styles.navButton}>{'<'}</button>
+        <button className={styles.navButton}>{'>'}</button>
+      </div>
     </SliderCard>
   );
 };

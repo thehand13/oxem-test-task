@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <MainIcon />
-      <div className={styles.company}>ЛИЗИНГОВАЯ КОМПАНИЯ</div>
+      <span className={styles.company}>ЛИЗИНГОВАЯ КОМПАНИЯ</span>
       <nav className={styles.navigation}>
         <ul className={styles.navList}>
           {navLinks.map((navLink) => (
