@@ -30,7 +30,9 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-        <MainButton buttonStyle={1}>Оставить заявку</MainButton>
+        <MainButton buttonStyle={1} eventHandler={function (): void {}}>
+          Оставить заявку
+        </MainButton>
       </div>
     </header>
   );

@@ -1,4 +1,5 @@
 .leasingForm {
+  margin-top: 100px;
 }
 
 .leasingFormTitle {
@@ -13,16 +14,26 @@
 .inputContainer {
   display: flex;
   justify-content: space-between;
+  margin-top: 32px;
 }
 
 .outputContainer {
   display: flex;
   justify-content: space-between;
+  margin-top: 44px;
+}
+.outputWrapper {
 }
 
 @media (max-width: 1439px) {
+  .leasingForm {
+    margin-top: 80px;
+  }
+
   .inputContainer {
     flex-direction: column;
+    margin-top: 44px;
+    height: 421px;
   }
 
   .outputContainer {
@@ -38,10 +49,22 @@
 }
 
 @media (max-width: 767px) {
+  .leasingForm {
+    margin-top: 64px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .leasingFormTitle {
+    font-size: 34px;
+    line-height: 31px;
+  }
+
   .inputContainer {
   }
 
   .outputContainer {
+    margin-top: 0px;
     flex-direction: column;
   }
 }

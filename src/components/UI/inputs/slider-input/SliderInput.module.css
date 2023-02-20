@@ -26,15 +26,17 @@
 .sliderRange {
   -webkit-appearance: none;
   -moz-appearance: none;
+  position: relative;
   background: #e1e1e1;
   outline: 0;
   height: 1px;
   display: block;
-  top: 20px;
-  right: 16px;
-  min-width: 427px;
+  top: -8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 30vw;
   height: auto;
-  background-color: #e0e0e0;
+  background-color: #ffffff00;
   color: #333e48;
   text-align: center;
   font-weight: 900;
@@ -74,10 +76,32 @@
 }
 
 @media (max-width: 1439px) {
+  .sliderRange {
+    width: 100%;
+  }
 }
 
 @media (max-width: 1023px) {
 }
 
 @media (max-width: 767px) {
+  .sliderInput {
+    height: 320px;
+  }
+
+  .sliderLabel {
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .sliderNumber {
+  }
+
+  .sliderRange {
+  }
+
+  .sliderSign {
+  }
 }

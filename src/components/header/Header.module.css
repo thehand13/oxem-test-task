@@ -63,11 +63,22 @@
     padding: 0px 36px;
     height: 80px;
   }
+  .leftMenu {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
   .header {
     padding: 0px;
     height: 60px;
+    background-color: black;
+  }
+
+  .logo {
+    padding-left: 20px;
+  }
+  .company {
+    display: none;
   }
 }

@@ -26,7 +26,6 @@ const Slide: React.FC<{ slides: ISlideComponents[] }> = (props) => {
   useEffect(() => {
     const timerId = setTimeout(() => {
       goToNextSlide();
-      console.log(slideIndex);
     }, 10000);
     return () => clearTimeout(timerId);
   }, [slideIndex, goToNextSlide]);
@@ -52,6 +51,18 @@ const Slide: React.FC<{ slides: ISlideComponents[] }> = (props) => {
       <div className={styles.navContainer}>
         <NavButton eventHandler={goToPreviousSlide}>{'<'}</NavButton>
         <NavButton eventHandler={goToNextSlide}>{'>'}</NavButton>
+      </div>
+
+      <div className={styles.navMenu}>
+        {props.slides.map((item) => (
+          <div
+            key={item.id}
+            className={styles.navMenuButton}
+            onClick={() => {
+              setSlideIndex(item.id);
+            }}
+          ></div>
+        ))}
       </div>
     </SliderCard>
   );

@@ -52,7 +52,7 @@ const LeasingForm = () => {
           maxValue={60}
           value={percentState}
           label={'Первоначальный взнос'}
-          sign={'10%'}
+          sign={'%'}
           handler={setPercentState}
         />
         <SliderInput
@@ -65,15 +65,23 @@ const LeasingForm = () => {
         />
       </div>
       <div className={styles.outputContainer}>
-        <CalculationOutput
-          outputValue={overallAmountState}
-          label={'Сумма договора лизинга'}
-        />
-        <CalculationOutput
-          outputValue={monthPayState}
-          label={'Ежемесячный платёж от'}
-        />
-        <MainButton buttonStyle={1}>Оставить заявку</MainButton>
+        <div className={styles.outputWrapper}>
+          <CalculationOutput
+            outputValue={overallAmountState}
+            label={'Сумма договора лизинга'}
+          />
+        </div>
+        <div className={styles.outputWrapper}>
+          <CalculationOutput
+            outputValue={monthPayState}
+            label={'Ежемесячный платёж от'}
+          />
+        </div>
+        <div className={styles.outputWrapper}>
+          <MainButton eventHandler={() => {}} buttonStyle={1}>
+            Оставить заявку
+          </MainButton>
+        </div>
       </div>
     </form>
   );

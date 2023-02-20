@@ -1,3 +1,4 @@
+import Modal from '@/components/UI/modal/Modal';
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
