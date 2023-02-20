@@ -1,4 +1,4 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MainButton from '../UI/buttons/main-button/MainButton';
 import SliderInput from '../UI/inputs/slider-input/SliderInput';
 import CalculationOutput from '../UI/outputs/calculation-output/CalculationOutput';
@@ -6,7 +6,7 @@ import styles from './LeasingForm.module.css';
 
 const creditPercent = 10;
 
-const LeasingForm = () => {
+const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
   const [priceState, setPriceState] = useState(3300000);
   const [percentState, setPercentState] = useState(10);
   const [initialPayState, setInitialPayState] = useState(330000);
@@ -80,7 +80,11 @@ const LeasingForm = () => {
           />
         </div>
         <div className={styles.outputWrapper}>
-          <MainButton eventHandler={() => {}} buttonStyle={1}>
+          <MainButton
+            onClick={() => {
+              props.onOpen();
+            }}
+          >
             Оставить заявку
           </MainButton>
         </div>

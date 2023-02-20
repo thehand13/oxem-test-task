@@ -8,16 +8,6 @@
   overflow: hidden;
 }
 
-@media (max-width: 1439px) {
-  .sliderSection {
-  }
-}
-
-@media (max-width: 1023px) {
-  .sliderSection {
-  }
-}
-
 @media (max-width: 767px) {
   .sliderSection {
     height: 490px;

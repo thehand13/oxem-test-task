@@ -22,8 +22,6 @@
   justify-content: space-between;
   margin-top: 44px;
 }
-.outputWrapper {
-}
 
 @media (max-width: 1439px) {
   .leasingForm {
@@ -34,17 +32,6 @@
     flex-direction: column;
     margin-top: 44px;
     height: 421px;
-  }
-
-  .outputContainer {
-  }
-}
-
-@media (max-width: 1023px) {
-  .inputContainer {
-  }
-
-  .outputContainer {
   }
 }
 
@@ -58,9 +45,6 @@
   .leasingFormTitle {
     font-size: 34px;
     line-height: 31px;
-  }
-
-  .inputContainer {
   }
 
   .outputContainer {

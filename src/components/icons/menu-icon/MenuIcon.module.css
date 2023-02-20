@@ -1,0 +1,20 @@
+.menuIcon {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .menuIcon {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .menuIcon {
+        display: block;
+    }
+
+    .menuIcon path {
+        stroke: white;
+        fill: white;
+    }
+}

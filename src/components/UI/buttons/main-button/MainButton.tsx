@@ -1,25 +1,19 @@
 import React from 'react';
 import styles from './MainButton.module.css';
 
-type ButtonStyleNumber = 0 | 1 | 2;
-
-const buttonStyles: string[] = [
-  styles.styleOne,
-  styles.styleTwo,
-  styles.styleThree,
-];
+type ButtonStyle = 'primary'|'secondary'|'outline'
 
 const MainButton: React.FC<{
   children: React.ReactNode;
-  eventHandler: () => void;
-  buttonStyle: ButtonStyleNumber;
-}> = (props) => {
+  onClick: () => void;
+  buttonStyle?: ButtonStyle;
+}> = ({onClick, buttonStyle, children}) => {
   return (
     <button
-      onClick={props.eventHandler}
-      className={`${styles.mainButton} ${buttonStyles[props.buttonStyle]}`}
+      onClick={onClick}
+      className={`${styles.mainButton} ${styles[buttonStyle || 'primary']}`}
     >
-      {props.children}
+      {children}
     </button>
   );
 };

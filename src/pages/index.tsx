@@ -1,8 +1,11 @@
 import Head from 'next/head';
 import Slider from '@/components/slider/Slider';
 import LeasingForm from '@/components/leasing-form/LeasingForm';
+import ApplicationPopup from '@/components/application-popup/ApplicationPopup';
+import { useState } from 'react';
 
 export default function Home() {
+  const [showPopup, setShowPopup] = useState(false);
   return (
     <>
       <Head>
@@ -12,8 +15,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Slider />
-      <LeasingForm />
+      <Slider onOpen={() => setShowPopup(true)} />
+      <LeasingForm onOpen={() => setShowPopup(true)} />
+      {showPopup && (
+        <ApplicationPopup
+          onClose={() => setShowPopup(false)}
+          onSubmit={() => {}}
+        />
+      )}
     </>
   );
 }

@@ -3,79 +3,80 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  padding: 12px 24px;
+  padding: 0 24px;
   border-radius: 40px;
   position: relative;
   cursor: pointer;
+  height: 48px;
 }
 
-.styleOne {
+.primary {
   border: 1px solid #ff9514;
   background: #ff9514;
   color: white;
 }
 
-.styleTwo {
+.outline {
   border: 1px solid #ff9514;
   background: white;
   color: #ff9514;
 }
 
-.styleThree {
+.secondary {
   border: 1px solid #f3f3f4;
   background: #f3f3f4;
   color: #111111;
 }
 
-.styleOne:hover {
+.primary:hover {
   border: 1px solid white;
   background: #111111;
   color: white;
 }
 
-.styleTwo:hover {
+.outline:hover {
   border: 1px solid #ff9514;
   background: #ff9514;
   color: white;
 }
 
-.styleThree:hover {
+.secondary:hover {
   border: 1px solid white;
   background: #111111;
   color: white;
 }
 
-.styleOne:active {
+.primary:active {
   border: 1px solid #575757;
   background: #575757;
   color: white;
 }
 
-.styleTwo:active {
+.outline:active {
   border: 1px solid #ffa83d;
   background: #ffa83d;
   color: white;
 }
 
-.styleThree:active {
+.secondary:active {
   border: 1px solid #575757;
   background: #575757;
   color: white;
 }
 
-.styleOne:disabled {
+.primary:disabled {
   border: 1px solid rgba(255, 149, 20, 0.4);
   background: rgba(255, 149, 20, 0.4);
   color: white;
 }
 
-.styleTwo:disabled {
+.outline:disabled {
   border: 1px solid rgba(255, 149, 20, 0.4);
   background: white;
   color: rgba(255, 149, 20, 0.4);
 }
 
-.styleThree:disabled {
+.secondary:disabled {
   border: 1px solid #f3f3f4;
   background: #f3f3f4;
   color: #3f3f3f;

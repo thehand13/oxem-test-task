@@ -1,0 +1,178 @@
+.overlay {
+  position: absolute;
+  top: -90px;
+  right: 0;
+  width: 100%;
+  height: calc(100% + 90px);
+  background: rgba(17, 17, 17, 0.5);
+  z-index: 2000;
+}
+
+.popup {
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  width: 100vw;
+  height: 745px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 32px 32px 0px 0px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.popup > div {
+  max-width: 655px;
+}
+
+.popupTitle {
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 90%;
+  color: #111111;
+  margin-bottom: 24px;
+}
+
+.popupDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #575757;
+  margin-bottom: 44px;
+  max-width: 466px;
+}
+
+.popupForm {
+  width: 100%;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.popupForm > div {
+  width: 100%;
+}
+
+.popupForm > div:first-of-type {
+  margin-right: 32px;
+}
+
+.popupCard {
+  box-sizing: border-box;
+  display: flex;
+  border: 2px solid #f3f3f4;
+  border-radius: 16px;
+  padding: 26px 23px 26px 33px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.popupAgreement {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(17, 17, 17, 0.5);
+  max-width: 351px;
+}
+
+.popupAgreement span {
+  color: black;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #e7e7e7;
+  border-radius: 24px;
+  width: 48px;
+  height: 48px;
+  margin-left: 8px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  .popup {
+    height: 655px;
+  }
+
+  .popup > div {
+    max-width: 696px;
+    width: 696px;
+  }
+
+  .closeButton {
+    top: 36px;
+    right: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .popup {
+    height: 478px;
+    align-items: start;
+  }
+
+  .closeButton {
+    top: 24px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .popup > div {
+    margin-top: 24px;
+    width: calc(100vw - 40px);
+  }
+
+  .popupTitle {
+    font-size: 22px;
+    line-height: 20px;
+    margin-bottom: 16px;
+  }
+
+  .popupDescription {
+    font-size: 14px;
+    line-height: 136%;
+    margin-bottom: 32px;
+    max-width: 241px;
+  }
+
+  .popupForm {
+    flex-direction: column;
+    margin-bottom: 8px;
+  }
+
+  .popupForm > div:first-of-type {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .popupCard {
+    flex-direction: column-reverse;
+    border: none;
+    padding: 0;
+    margin-bottom: 24px;
+  }
+
+  .popupAgreement {
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+    max-width: 280px;
+  }
+}

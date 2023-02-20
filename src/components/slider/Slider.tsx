@@ -48,8 +48,8 @@ const slides: ISlideComponents[] = [
   },
 ];
 
-const Slider = () => {
-  return <Slide slides={slides} />;
+const Slider: React.FC<{ onOpen: () => void }> = ({ onOpen }) => {
+  return <Slide slides={slides} onOpen={onOpen} />;
 };
 
 export default Slider;

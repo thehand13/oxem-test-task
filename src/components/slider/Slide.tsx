@@ -6,7 +6,9 @@ import styles from './Slide.module.css';
 import SliderCard from '../UI/cards/slider-card/SliderCard';
 import NavButton from '../UI/buttons/nav-button/NavButton';
 
-const Slide: React.FC<{ slides: ISlideComponents[] }> = (props) => {
+const Slide: React.FC<{ slides: ISlideComponents[]; onOpen: () => void }> = (
+  props
+) => {
   const [slideIndex, setSlideIndex] = useState(0);
   const goToPreviousSlide = () => {
     if (slideIndex === 0) {
@@ -44,7 +46,11 @@ const Slide: React.FC<{ slides: ISlideComponents[] }> = (props) => {
         <p className={styles.slideDescription}>
           {props.slides[slideIndex].description}
         </p>
-        <MainButton buttonStyle={0} eventHandler={function (): void {}}>
+        <MainButton
+          onClick={() => {
+            props.onOpen();
+          }}
+        >
           {props.slides[slideIndex].buttonText}
         </MainButton>
       </div>

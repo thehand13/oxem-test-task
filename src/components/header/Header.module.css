@@ -26,6 +26,11 @@
   color: rgba(17, 17, 17, 0.5);
 }
 
+.navMenu {
+  display: flex;
+  align-items: center;
+}
+
 .leftMenu {
   display: flex;
   align-items: center;
@@ -55,14 +60,11 @@
   text-decoration: none;
 }
 
-@media (max-width: 1439px) {
-}
-
 @media (max-width: 1023px) {
   .header {
-    padding: 0px 36px;
-    height: 80px;
+    padding: 16px 36px;
   }
+
   .leftMenu {
     display: none;
   }
@@ -70,14 +72,9 @@
 
 @media (max-width: 767px) {
   .header {
-    padding: 0px;
-    height: 60px;
     background-color: black;
   }
 
-  .logo {
-    padding-left: 20px;
-  }
   .company {
     display: none;
   }

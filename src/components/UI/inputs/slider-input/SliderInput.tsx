@@ -9,8 +9,8 @@ const SliderInput: React.FC<{
   sign: string;
   handler: React.Dispatch<React.SetStateAction<number>>;
 }> = (props) => {
-  const onChangeValueHandler = (event: any) => {
-    props.handler(event.target.value);
+  const onChangeValueHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    props.handler(+event.target.value);
   };
   return (
     <div className={styles.sliderInput}>
