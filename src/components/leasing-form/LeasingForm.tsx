@@ -7,22 +7,25 @@ import styles from './LeasingForm.module.css';
 const LeasingForm = () => {
   const [priceState, setPriceState] = useState(3300000);
   const [percentState, setPercentState] = useState(10);
+  const [initialPayState, setInitialPayState] = useState(330000);
   const [durationState, setDurationState] = useState(60);
   const [overallAmountState, setOverallAmountState] = useState(0);
   const [monthPayState, setMonthPayState] = useState(0);
 
   useEffect(() => {
-    const decimalPercent = percentState / 100;
-    const newMonthPayState = +(
-      priceState -
-      priceState *
-        decimalPercent *
-        (percentState / (1 + percentState) - durationState - 1)
-    ).toFixed();
+    const newInitialPayState = +((priceState * percentState) / 100).toFixed();
+    const monthPercentDecimal = percentState / durationState / 100;
+    const leasingBody = priceState - newInitialPayState;
+    const leasingRatio =
+      (monthPercentDecimal * Math.pow(1 + monthPercentDecimal, durationState)) /
+      (Math.pow(1 + monthPercentDecimal, durationState) - 1);
+
+    const newMonthPayState = +(leasingBody * leasingRatio).toFixed();
     const newOverallAmountState = +(
-      priceState * decimalPercent +
+      newInitialPayState +
       durationState * newMonthPayState
     ).toFixed();
+    setInitialPayState(newInitialPayState);
     setMonthPayState(newMonthPayState);
     setOverallAmountState(newOverallAmountState);
   }, [priceState, percentState, durationState]);
@@ -70,7 +73,7 @@ const LeasingForm = () => {
           outputValue={monthPayState}
           label={'Ежемесячный платёж от'}
         />
-        <MainButton buttonColor={'firstUIButton'}>Оставить заявку</MainButton>
+        <MainButton buttonStyle={1}>Оставить заявку</MainButton>
       </div>
     </form>
   );

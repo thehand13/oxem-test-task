@@ -17,14 +17,14 @@ main {
   padding-right: 48px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   main {
     padding-left: 36px;
     padding-right: 36px;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 767px) {
   main {
     top: 48px;
     padding: 0px;

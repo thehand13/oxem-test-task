@@ -26,6 +26,7 @@ const SliderInput: React.FC<{
         max={props.maxValue}
         type="number"
       />
+      <div className={styles.sliderSign}>{props.sign}</div>
       <input
         onChange={onChangeValueHandler}
         value={props.value}
@@ -35,7 +36,6 @@ const SliderInput: React.FC<{
         max={props.maxValue}
         type="range"
       />
-      <div className={styles.sliderSign}>{props.sign}</div>
     </div>
   );
 };

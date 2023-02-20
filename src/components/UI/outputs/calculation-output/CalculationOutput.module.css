@@ -1,3 +1,36 @@
 .calculationOutput {
   display: block;
 }
+
+.calculationLabel {
+  color: #575757;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.calculationValue {
+  color: #575757;
+  font-weight: 900;
+  font-size: 54px;
+  line-height: 90%;
+}
+
+@media (max-width: 1439px) {
+}
+
+@media (max-width: 1023px) {
+}
+
+@media (max-width: 767px) {
+  .calculationLabel {
+    font-size: 14px;
+    line-height: 136%;
+  }
+
+  .calculationValue {
+    font-size: 22px;
+    line-height: 20px;
+  }
+}

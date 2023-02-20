@@ -8,3 +8,75 @@
   position: relative;
   cursor: pointer;
 }
+
+.styleOne {
+  border: 1px solid #ff9514;
+  background: #ff9514;
+  color: white;
+}
+
+.styleTwo {
+  border: 1px solid #ff9514;
+  background: white;
+  color: #ff9514;
+}
+
+.styleThree {
+  border: 1px solid #f3f3f4;
+  background: #f3f3f4;
+  color: #111111;
+}
+
+.styleOne:hover {
+  border: 1px solid white;
+  background: #111111;
+  color: white;
+}
+
+.styleTwo:hover {
+  border: 1px solid #ff9514;
+  background: #ff9514;
+  color: white;
+}
+
+.styleThree:hover {
+  border: 1px solid white;
+  background: #111111;
+  color: white;
+}
+
+.styleOne:active {
+  border: 1px solid #575757;
+  background: #575757;
+  color: white;
+}
+
+.styleTwo:active {
+  border: 1px solid #ffa83d;
+  background: #ffa83d;
+  color: white;
+}
+
+.styleThree:active {
+  border: 1px solid #575757;
+  background: #575757;
+  color: white;
+}
+
+.styleOne:disabled {
+  border: 1px solid rgba(255, 149, 20, 0.4);
+  background: rgba(255, 149, 20, 0.4);
+  color: white;
+}
+
+.styleTwo:disabled {
+  border: 1px solid rgba(255, 149, 20, 0.4);
+  background: white;
+  color: rgba(255, 149, 20, 0.4);
+}
+
+.styleThree:disabled {
+  border: 1px solid #f3f3f4;
+  background: #f3f3f4;
+  color: #3f3f3f;
+}

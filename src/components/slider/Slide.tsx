@@ -14,9 +14,7 @@ const Slide: React.FC<ISlideComponents> = (props) => {
       <div className={styles.infoContainer}>
         <h1 className={styles.slideTitle}>{props.title}</h1>
         <p className={styles.slideDescription}>{props.description}</p>
-        <MainButton buttonColor={'firstUIButton'}>
-          {props.buttonText}
-        </MainButton>
+        <MainButton buttonStyle={0}>{props.buttonText}</MainButton>
       </div>
       <div className={styles.navContainer}>
         <button className={styles.navButton}>{'<'}</button>

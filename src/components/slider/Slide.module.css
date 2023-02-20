@@ -1,7 +1,7 @@
 .imageContainer {
   position: absolute;
   width: 841px;
-  height: 100%;
+  height: 472px;
   top: 0px;
   right: 0px;
   border-radius: 32px;
@@ -36,12 +36,10 @@
   cursor: pointer;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1439px) {
   .imageContainer {
-    height: 327px;
-    width: 585px;
-    right: 0px;
-    top: 75px;
+    width: 675px;
+    height: 379px;
   }
 
   .infoContainer {
@@ -57,15 +55,14 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .imageContainer {
     position: relative;
-    height: 321px;
     width: 571px;
+    height: 321px;
   }
 
   .infoContainer {
-    margin-top: 0px;
   }
 
   .slideTitle {
@@ -78,22 +75,17 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 767px) {
   .imageContainer {
     position: relative;
-    height: 261px;
     width: 462px;
-    left: -125px;
-    top: 4px;
+    height: 261px;
   }
 
   .infoContainer {
   }
 
   .slideTitle {
-    font-size: 32px;
-
-    text-align: left;
   }
 
   .slideDescription {
