@@ -1,6 +1,6 @@
 ## Студия OXEM (Next, Typescript)
 
-## oxem-test-task-delta.vercel.app
+## oxem-test-task-livid.vercel.app
 
 Для установки зависимостей:
 
