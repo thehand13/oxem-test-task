@@ -4,6 +4,8 @@ import SliderInput from '../UI/inputs/slider-input/SliderInput';
 import CalculationOutput from '../UI/outputs/calculation-output/CalculationOutput';
 import styles from './LeasingForm.module.css';
 
+const creditPercent = 10;
+
 const LeasingForm = () => {
   const [priceState, setPriceState] = useState(3300000);
   const [percentState, setPercentState] = useState(10);
@@ -14,7 +16,7 @@ const LeasingForm = () => {
 
   useEffect(() => {
     const newInitialPayState = +((priceState * percentState) / 100).toFixed();
-    const monthPercentDecimal = percentState / durationState / 100;
+    const monthPercentDecimal = creditPercent / 12 / 100;
     const leasingBody = priceState - newInitialPayState;
     const leasingRatio =
       (monthPercentDecimal * Math.pow(1 + monthPercentDecimal, durationState)) /
