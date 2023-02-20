@@ -1,13 +1,26 @@
 .sliderSection {
+  position: relative;
   color: #ffffff;
   background-color: #000000;
   height: 473px;
   border-radius: 32px;
   position: relative;
+  overflow: hidden;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 1439px) {
   .sliderSection {
+  }
+}
+
+@media (max-width: 1023px) {
+  .sliderSection {
+  }
+}
+
+@media (max-width: 767px) {
+  .sliderSection {
+    height: 490px;
     border-radius: 0px 0px 32px 32px;
   }
 }

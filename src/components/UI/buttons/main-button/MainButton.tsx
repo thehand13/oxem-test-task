@@ -11,10 +11,12 @@ const buttonStyles: string[] = [
 
 const MainButton: React.FC<{
   children: React.ReactNode;
+  eventHandler: () => void;
   buttonStyle: ButtonStyleNumber;
 }> = (props) => {
   return (
     <button
+      onClick={props.eventHandler}
       className={`${styles.mainButton} ${buttonStyles[props.buttonStyle]}`}
     >
       {props.children}

@@ -1,24 +1,57 @@
 import Image from 'next/image';
 import { ISlideComponents } from '@/models/slide-components';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import MainButton from '../UI/buttons/main-button/MainButton';
 import styles from './Slide.module.css';
 import SliderCard from '../UI/cards/slider-card/SliderCard';
+import NavButton from '../UI/buttons/nav-button/NavButton';
 
-const Slide: React.FC<ISlideComponents> = (props) => {
+const Slide: React.FC<{ slides: ISlideComponents[] }> = (props) => {
+  const [slideIndex, setSlideIndex] = useState(0);
+  const goToPreviousSlide = () => {
+    if (slideIndex === 0) {
+      setSlideIndex(() => props.slides.length - 1);
+    } else {
+      setSlideIndex((prevSlide) => prevSlide - 1);
+    }
+  };
+  const goToNextSlide = useCallback(() => {
+    if (slideIndex === props.slides.length - 1) {
+      setSlideIndex(() => 0);
+    } else {
+      setSlideIndex((prevSlide) => prevSlide + 1);
+    }
+  }, [props.slides.length, slideIndex]);
+
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      goToNextSlide();
+      console.log(slideIndex);
+    }, 10000);
+    return () => clearTimeout(timerId);
+  }, [slideIndex, goToNextSlide]);
+
   return (
     <SliderCard>
       <div className={styles.imageContainer}>
-        <Image src={props.imageUrl} alt={props.title} fill />
+        <Image
+          src={props.slides[slideIndex].imageUrl}
+          alt={props.slides[slideIndex].title}
+          fill
+        />
       </div>
       <div className={styles.infoContainer}>
-        <h1 className={styles.slideTitle}>{props.title}</h1>
-        <p className={styles.slideDescription}>{props.description}</p>
-        <MainButton buttonStyle={0}>{props.buttonText}</MainButton>
+        <h1 className={styles.slideTitle}>{props.slides[slideIndex].title}</h1>
+        <p className={styles.slideDescription}>
+          {props.slides[slideIndex].description}
+        </p>
+        <MainButton buttonStyle={0} eventHandler={function (): void {}}>
+          {props.slides[slideIndex].buttonText}
+        </MainButton>
       </div>
       <div className={styles.navContainer}>
-        <button className={styles.navButton}>{'<'}</button>
-        <button className={styles.navButton}>{'>'}</button>
+        <NavButton eventHandler={goToPreviousSlide}>{'<'}</NavButton>
+        <NavButton eventHandler={goToNextSlide}>{'>'}</NavButton>
       </div>
     </SliderCard>
   );
