@@ -11,27 +11,27 @@ const MenuIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1_3304)">
+      <g clipPath="url(#clip0_1_3304)">
         <path
           d="M5.33331 8H26.6666"
           stroke="black"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M5.33331 16H26.6666"
           stroke="black"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
           d="M5.33331 24H21.3333"
           stroke="black"
-          stroke-width="2.75"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2.75"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
       <defs>

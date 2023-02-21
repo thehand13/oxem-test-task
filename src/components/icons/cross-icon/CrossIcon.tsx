@@ -19,7 +19,7 @@ const CrossIcon = () => {
       <path
         d="M9.40039 9.40039L22.5997 22.5997"
         stroke="black"
-        stroke-width="2.75"
+        strokeWidth="2.75"
         stroke-linecap="round"
         stroke-linejoin="round"
       />

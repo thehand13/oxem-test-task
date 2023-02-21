@@ -9,6 +9,16 @@
   cursor: pointer;
 }
 
+.forward {
+  width: 48px;
+  height: 48px;
+}
+
+.backward {
+  width: 24px;
+  height: 24px;
+}
+
 .navButton:hover {
   background: rgba(255, 255, 255, 0.1);
 }

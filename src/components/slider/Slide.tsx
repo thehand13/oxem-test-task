@@ -5,6 +5,8 @@ import MainButton from '../UI/buttons/main-button/MainButton';
 import styles from './Slide.module.css';
 import SliderCard from '../UI/cards/slider-card/SliderCard';
 import NavButton from '../UI/buttons/nav-button/NavButton';
+import BackwardIcon from '../icons/nav-icons/backward-icon/BackwardIcon';
+import ForwardIcon from '../icons/nav-icons/forward-icon/ForwardIcon';
 
 const Slide: React.FC<{ slides: ISlideComponents[]; onOpen: () => void }> = (
   props
@@ -55,15 +57,17 @@ const Slide: React.FC<{ slides: ISlideComponents[]; onOpen: () => void }> = (
         </MainButton>
       </div>
       <div className={styles.navContainer}>
-        <NavButton eventHandler={goToPreviousSlide}>{'<'}</NavButton>
-        <NavButton eventHandler={goToNextSlide}>{'>'}</NavButton>
+        <NavButton iconType="backward" eventHandler={goToPreviousSlide} />
+        <NavButton iconType="forward" eventHandler={goToNextSlide} />
       </div>
 
       <div className={styles.navMenu}>
         {props.slides.map((item) => (
           <div
             key={item.id}
-            className={styles.navMenuButton}
+            className={`${styles.navMenuButton} ${
+              item.id === slideIndex && styles.navMenuButtonCurrent
+            }`}
             onClick={() => {
               setSlideIndex(item.id);
             }}
