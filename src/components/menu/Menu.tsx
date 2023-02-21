@@ -6,15 +6,15 @@ import styles from './Menu.module.css';
 import CrossIcon from '@/components/icons/cross-icon/CrossIcon';
 
 type MenuProps = {
-  onClick: () => void;
+  handleClose: () => void;
 };
 
-const Menu = ({ onClick }: MenuProps) => {
+const Menu = ({ handleClose }: MenuProps) => {
   return (
-    <div onClick={onClick} className={styles.overlay}>
+    <div className={styles.overlay}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarTop}>
-          <div className={styles.sidebarClose} onClick={onClick}>
+          <div className={styles.sidebarClose} onClick={handleClose}>
             <CrossIcon />
           </div>
           <ul className={styles.menuList}>

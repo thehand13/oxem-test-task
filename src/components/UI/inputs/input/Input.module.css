@@ -1,14 +1,68 @@
-.input {
-  display: block;
+.inputContainer {
+  position: relative;
+  height: 48px;
+}
+
+.inputPlaceholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 4px;
+  color: #575757;
+  display: none;
+  position: absolute;
+  top: 8px;
+  left: 24px;
+}
+
+.customInput {
   box-sizing: border-box;
   padding: 12px 24px;
   background: #F3F3F4;
   border-radius: 16px;
   width: 100%;
-  height: 48px;
+  height: 100%;
   color: #575757;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   border: none;
+  outline: none !important;
+}
+
+.customInput:hover {
+  background: #EAEAEB;
+  font-size: 16px;
+  line-height: 16px;
+  padding-top: 24px;
+}
+
+.customInput:hover ~ .inputPlaceholder,
+.customInput:focus ~ .inputPlaceholder
+{
+  display: block;
+}
+
+
+.customInput:focus {
+  background: white;
+  border: 1px solid #FF9514!important;
+  font-size: 16px;
+  line-height: 16px;
+  padding-top: 24px;
+}
+
+.customInput:focus::placeholder {
+  color: transparent;
+}
+
+.customInput:disabled  {
+  opacity: 0.4;
+}
+
+.inputError {
+  background: #F3F3F4;
+  border: 1px solid #D53234;
+  font-size: 16px;
+  line-height: 16px;
 }

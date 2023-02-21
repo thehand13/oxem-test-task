@@ -6,14 +6,23 @@ import MainButton from '../UI/buttons/main-button/MainButton';
 import styles from './Header.module.css';
 import MenuIcon from '@/components/icons/menu-icon/MenuIcon';
 import Menu from '@/components/menu/Menu';
+import Dropdown from '@/components/UI/dropdown/Dropdown';
 
 export const navLinks: INavLink[] = [
-  { route: '/leasing', title: 'Лизинг' },
+  {
+    route: '/leasing',
+    title: 'Лизинг',
+    subItems: [
+      { route: '/personal', title: 'Для личного пользования' },
+      { route: '/lawyer', title: 'Для юридических лиц' },
+      { route: '/calculator', title: 'Калькулятор' },
+    ],
+  },
   { route: '/catalog', title: 'Каталог' },
   { route: '/about-us', title: 'О нас' },
 ];
 
-const Header = () => {
+const Header: React.FC<{ onOpen: () => void }> = ({ onOpen }) => {
   const [showSidebar, setShowSidebar] = useState(false);
   return (
     <header className={styles.header}>
@@ -26,15 +35,11 @@ const Header = () => {
           <nav className={styles.navigation}>
             <ul className={styles.navList}>
               {navLinks.map((navLink) => (
-                <li className={styles.navItem} key={navLink.route}>
-                  <Link className={styles.navItemLink} href={navLink.route}>
-                    {navLink.title}
-                  </Link>
-                </li>
+                <Dropdown navLink={navLink} key={navLink.route} />
               ))}
             </ul>
           </nav>
-          <MainButton buttonStyle="outline" onClick={() => {}}>
+          <MainButton buttonStyle="outline" onClick={onOpen}>
             Оставить заявку
           </MainButton>
         </div>
@@ -45,7 +50,7 @@ const Header = () => {
         >
           <MenuIcon />
         </div>
-        {showSidebar && <Menu onClick={() => setShowSidebar(false)} />}
+        {showSidebar && <Menu handleClose={() => setShowSidebar(false)} />}
       </div>
     </header>
   );

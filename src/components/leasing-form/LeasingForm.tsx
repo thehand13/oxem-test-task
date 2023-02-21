@@ -6,6 +6,11 @@ import styles from './LeasingForm.module.css';
 
 const creditPercent = 10;
 
+const inputRanges = {
+  price: { min: 1000000, max: 6000000 },
+  percent: { min: 10, max: 60 },
+  duration: { min: 1, max: 60 },
+};
 const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
   const [priceState, setPriceState] = useState(3300000);
   const [percentState, setPercentState] = useState(10);
@@ -27,9 +32,18 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
       newInitialPayState +
       durationState * newMonthPayState
     ).toFixed();
-    setInitialPayState(newInitialPayState);
-    setMonthPayState(newMonthPayState);
-    setOverallAmountState(newOverallAmountState);
+    if (
+      inputRanges.price.min <= priceState &&
+      inputRanges.price.max >= priceState &&
+      inputRanges.percent.min <= percentState &&
+      inputRanges.percent.max >= percentState &&
+      inputRanges.duration.min <= durationState &&
+      inputRanges.duration.max >= durationState
+    ) {
+      setInitialPayState(newInitialPayState);
+      setMonthPayState(newMonthPayState);
+      setOverallAmountState(newOverallAmountState);
+    }
   }, [priceState, percentState, durationState]);
 
   const submitFormHandler = (event: React.FormEvent) => {
@@ -42,24 +56,24 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
       </div>
       <div className={styles.inputContainer}>
         <SliderInput
-          minValue={1000000}
-          maxValue={6000000}
+          minValue={inputRanges.price.min}
+          maxValue={inputRanges.price.max}
           value={priceState}
           label={'Стоимость автомобиля'}
           sign={'₽'}
           handler={setPriceState}
         />
         <SliderInput
-          minValue={10}
-          maxValue={60}
+          minValue={inputRanges.percent.min}
+          maxValue={inputRanges.percent.max}
           value={percentState}
           label={'Первоначальный взнос'}
           sign={'%'}
           handler={setPercentState}
         />
         <SliderInput
-          minValue={1}
-          maxValue={60}
+          minValue={inputRanges.duration.min}
+          maxValue={inputRanges.duration.max}
           value={durationState}
           label={'Срок лизинга'}
           sign={'мес.'}

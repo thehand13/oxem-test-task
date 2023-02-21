@@ -32,7 +32,7 @@ const ApplicationPopup = ({ onClose, onSubmit }: PopupProps) => {
               value={phone}
               onInput={(phone) => setPhone(phone)}
               placeholder="Телефон"
-              type="phone"
+              type="tel"
             />
             <Input
               value={name}
