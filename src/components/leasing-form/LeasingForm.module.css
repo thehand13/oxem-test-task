@@ -84,14 +84,18 @@
   }
   .outputContainer {
     margin-top: 0px;
-    flex-direction: column;
+    display: block;
+  }
+
+  .outputWrapper {
+    width: 100%;
   }
 
   .mainButton {
     margin-top: 0px;
     font-size: 22px;
     line-height: 20px;
-    width: 280px;
+    width: 100%;
     height: 60px;
   }
 }

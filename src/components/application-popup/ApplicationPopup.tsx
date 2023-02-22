@@ -45,7 +45,9 @@ const ApplicationPopup = ({ onClose, onSubmit }: PopupProps) => {
               Нажимая на кнопку «Оставить заявку», я даю согласие{' '}
               <span>на обработку персональных данных</span>
             </div>
-            <MainButton onClickHandler={onSubmit}>Оставить заявку</MainButton>
+            <div className={styles.mainButton}>
+              <MainButton onClickHandler={onSubmit}>Оставить заявку</MainButton>
+            </div>
           </div>
           <div className={styles.iconContainer}>
             <div className={styles.iconWrapper}>

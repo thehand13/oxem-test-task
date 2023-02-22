@@ -105,6 +105,16 @@
   cursor: pointer;
 }
 
+.mainButton {
+  height: 48px;
+  width: 174px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
 @media (max-width: 1023px) {
   .popup {
     height: 655px;
@@ -149,7 +159,6 @@
     font-size: 14px;
     line-height: 136%;
     margin-bottom: 32px;
-    max-width: 241px;
   }
 
   .popupForm {
@@ -167,6 +176,10 @@
     border: none;
     padding: 0;
     margin-bottom: 24px;
+  }
+
+  .mainButton {
+    width: 100%;
   }
 
   .popupAgreement {
