@@ -53,7 +53,7 @@
   display: block;
   box-sizing: border-box;
   height: 2px;
-  background: #ff9514;
+  background: #e1e1e1;
 }
 
 .sliderRange::-webkit-slider-thumb {
