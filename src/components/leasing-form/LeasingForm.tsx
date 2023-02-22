@@ -121,7 +121,9 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
           />
         </div>
         <div className={styles.outputWrapper}>
-          <MainButton onClickHandler={() => {}}>Оставить заявку</MainButton>
+          <div className={styles.mainButton}>
+            <MainButton onClickHandler={() => {}}>Оставить заявку</MainButton>
+          </div>
         </div>
       </div>
     </form>

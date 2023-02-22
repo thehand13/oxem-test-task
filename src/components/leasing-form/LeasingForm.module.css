@@ -23,6 +23,16 @@
   margin-top: 44px;
 }
 
+.mainButton {
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 426px;
+  height: 68px;
+}
+
 @media (max-width: 1439px) {
   .leasingForm {
     margin-top: 80px;
@@ -32,6 +42,17 @@
     flex-direction: column;
     margin-top: 44px;
     height: 421px;
+  }
+
+  .mainButton {
+    width: 345px;
+    height: 68px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .outputContainer {
+    flex-wrap: wrap;
   }
 }
 
@@ -50,5 +71,12 @@
   .outputContainer {
     margin-top: 0px;
     flex-direction: column;
+  }
+
+  .mainButton {
+    font-size: 22px;
+    line-height: 20px;
+    width: 280px;
+    height: 60px;
   }
 }

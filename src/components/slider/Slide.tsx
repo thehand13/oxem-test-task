@@ -48,13 +48,15 @@ const Slide: React.FC<{ slides: ISlideComponents[]; onOpen: () => void }> = (
         <p className={styles.slideDescription}>
           {props.slides[slideIndex].description}
         </p>
-        <MainButton
-          onClickHandler={() => {
-            props.onOpen();
-          }}
-        >
-          {props.slides[slideIndex].buttonText}
-        </MainButton>
+        <div className={styles.mainButton}>
+          <MainButton
+            onClickHandler={() => {
+              props.onOpen();
+            }}
+          >
+            {props.slides[slideIndex].buttonText}
+          </MainButton>
+        </div>
       </div>
       <div className={styles.navContainer}>
         <NavButton iconType="backward" eventHandler={goToPreviousSlide} />

@@ -31,6 +31,16 @@
   margin-bottom: 28px;
 }
 
+.mainButton {
+  height: 48px;
+  width: 174px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
 .navMenu {
   position: absolute;
   left: 50%;

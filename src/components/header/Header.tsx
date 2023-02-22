@@ -39,9 +39,11 @@ const Header: React.FC<{ onOpen: () => void }> = ({ onOpen }) => {
               ))}
             </ul>
           </nav>
-          <MainButton buttonStyle="outline" onClickHandler={onOpen}>
-            Оставить заявку
-          </MainButton>
+          <div className={styles.mainButton}>
+            <MainButton buttonStyle="outline" onClickHandler={onOpen}>
+              Оставить заявку
+            </MainButton>
+          </div>
         </div>
         <div
           onClick={() => {

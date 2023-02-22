@@ -1,70 +1,79 @@
 .overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(17, 17, 17, 0.5);
-    display: flex;
-    justify-content: end;
-    z-index: 2000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(17, 17, 17, 0.5);
+  display: flex;
+  justify-content: end;
+  z-index: 2000;
 }
 
 .sidebar {
-    position: relative;
-    height: 100vh;
-    width: 329px;
-    background-color: white;
-    padding: 24px 32px 44px 44px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    opacity: 100;
+  position: relative;
+  height: 100vh;
+  width: 329px;
+  background-color: white;
+  padding: 24px 32px 44px 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 100;
 }
 
 .sidebarTop {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebarClose {
-    align-self: end;
-    margin-bottom: 8px;
-    cursor: pointer;
+  align-self: end;
+  margin-bottom: 8px;
+  cursor: pointer;
 }
 
 .sidebarButton {
-    margin-right: 4px;
+  margin-right: 4px;
 }
 
 .sidebarButton button {
-    width: 100%;
+  width: 100%;
 }
 
 .menuItem {
-    list-style: none;
-    margin-bottom: 24px;
+  list-style: none;
+  margin-bottom: 24px;
 }
 
 .itemLink {
-    color: #575757;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 24px;
-    text-decoration: none;
+  color: #575757;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.mainButton {
+  height: 48px;
+  width: 174px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
 }
 
 @media (min-width: 1023px) {
-    .overlay .sidebar {
-        display: none;
-    }
+  .overlay .sidebar {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
-    .sidebar {
-        width: 260px;
-        padding: 24px 12px 24px 24px;
-    }
+  .sidebar {
+    width: 260px;
+    padding: 24px 12px 24px 24px;
+  }
 }
-

@@ -40,9 +40,11 @@ const Menu = ({ handleClose, handleOpenPopup }: MenuProps) => {
           </ul>
         </div>
         <div className={styles.sidebarButton}>
-          <MainButton onClickHandler={mainButtonClickHandler}>
-            Оставить заявку
-          </MainButton>
+          <div className={styles.mainButton}>
+            <MainButton onClickHandler={mainButtonClickHandler}>
+              Оставить заявку
+            </MainButton>
+          </div>
         </div>
       </div>
     </div>
