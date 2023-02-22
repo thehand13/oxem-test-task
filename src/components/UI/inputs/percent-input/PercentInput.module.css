@@ -13,7 +13,7 @@
   margin-bottom: 7px;
   padding: 20px 20px;
   width: 100%;
-  height: 60px;
+  height: 68px;
   background-color: #f3f3f4;
   border-radius: 16px;
   color: #575757;
@@ -63,11 +63,15 @@
 
 .sliderSign {
   position: absolute;
-  width: auto;
-  height: 20px;
-  right: 20px;
-  top: 52px;
-  background-color: #f3f3f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  height: 54px;
+  width: 70px;
+  right: 7px;
+  top: 40px;
+  background-color: #e0e0e0;
   text-align: center;
   color: #575757;
   font-weight: 900;
@@ -98,10 +102,11 @@
   }
 
   .sliderSign {
-    top: 49px;
+    height: 48px;
     font-size: 22px;
     font-weight: 900;
     line-height: 20px;
     letter-spacing: 0em;
+    top: 33px;
   }
 }

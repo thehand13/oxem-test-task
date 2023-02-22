@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import MainButton from '../UI/buttons/main-button/MainButton';
+import PercentInput from '../UI/inputs/percent-input/PercentInput';
 import SliderInput from '../UI/inputs/slider-input/SliderInput';
 import CalculationOutput from '../UI/outputs/calculation-output/CalculationOutput';
 import styles from './LeasingForm.module.css';
@@ -8,28 +9,31 @@ const creditPercent = 10;
 
 const inputRanges = {
   price: { min: 1000000, max: 6000000 },
+  initialPay: { min: 100000, max: 600000 },
   percent: { min: 10, max: 60 },
   duration: { min: 1, max: 60 },
 };
+
 const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
   const [priceState, setPriceState] = useState(3300000);
   const [percentState, setPercentState] = useState(10);
   const [initialPayState, setInitialPayState] = useState(330000);
+  const [initialPayMinState, setInitialMinState] = useState(100000);
+  const [initialPayMaxState, setInitialMaxState] = useState(600000);
   const [durationState, setDurationState] = useState(60);
   const [overallAmountState, setOverallAmountState] = useState(0);
   const [monthPayState, setMonthPayState] = useState(0);
 
   useEffect(() => {
-    const newInitialPayState = +((priceState * percentState) / 100).toFixed();
     const monthPercentDecimal = creditPercent / 12 / 100;
-    const leasingBody = priceState - newInitialPayState;
+    const leasingBody = priceState - initialPayState;
     const leasingRatio =
       (monthPercentDecimal * Math.pow(1 + monthPercentDecimal, durationState)) /
       (Math.pow(1 + monthPercentDecimal, durationState) - 1);
 
     const newMonthPayState = +(leasingBody * leasingRatio).toFixed();
     const newOverallAmountState = +(
-      newInitialPayState +
+      initialPayState +
       durationState * newMonthPayState
     ).toFixed();
     if (
@@ -40,14 +44,36 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
       inputRanges.duration.min <= durationState &&
       inputRanges.duration.max >= durationState
     ) {
-      setInitialPayState(newInitialPayState);
       setMonthPayState(newMonthPayState);
       setOverallAmountState(newOverallAmountState);
     }
-  }, [priceState, percentState, durationState]);
+  }, [priceState, initialPayState, durationState, percentState]);
+
+  useEffect(() => {
+    const newInitialPayState = +((priceState * percentState) / 100).toFixed();
+    const newPercentState = +(
+      (newInitialPayState / priceState) *
+      100
+    ).toFixed();
+
+    setInitialPayState(newInitialPayState);
+    setPercentState(newPercentState);
+    setInitialMinState(
+      +((priceState * inputRanges.percent.min) / 100).toFixed()
+    );
+    setInitialMaxState(
+      +((priceState * inputRanges.percent.max) / 100).toFixed()
+    );
+  }, [priceState]);
+
+  useEffect(() => {
+    const newPercentState = +((initialPayState / priceState) * 100).toFixed();
+    setPercentState(newPercentState);
+  }, [initialPayState]);
 
   const submitFormHandler = (event: React.FormEvent) => {
     event.preventDefault();
+    props.onOpen();
   };
   return (
     <form className={styles.leasingForm} onSubmit={submitFormHandler}>
@@ -63,13 +89,14 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
           sign={'₽'}
           handler={setPriceState}
         />
-        <SliderInput
-          minValue={inputRanges.percent.min}
-          maxValue={inputRanges.percent.max}
-          value={percentState}
+        <PercentInput
+          minValue={initialPayMinState}
+          maxValue={initialPayMaxState}
+          value={initialPayState}
+          percentValue={percentState}
           label={'Первоначальный взнос'}
           sign={'%'}
-          handler={setPercentState}
+          handler={setInitialPayState}
         />
         <SliderInput
           minValue={inputRanges.duration.min}
@@ -94,13 +121,7 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
           />
         </div>
         <div className={styles.outputWrapper}>
-          <MainButton
-            onClickHandler={() => {
-              props.onOpen();
-            }}
-          >
-            Оставить заявку
-          </MainButton>
+          <MainButton onClickHandler={() => {}}>Оставить заявку</MainButton>
         </div>
       </div>
     </form>
