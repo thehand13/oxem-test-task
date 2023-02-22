@@ -79,6 +79,9 @@
     line-height: 31px;
   }
 
+  .inputContainer {
+    height: 320px;
+  }
   .outputContainer {
     margin-top: 0px;
     flex-direction: column;
