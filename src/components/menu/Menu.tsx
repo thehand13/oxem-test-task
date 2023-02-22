@@ -7,14 +7,26 @@ import CrossIcon from '@/components/icons/cross-icon/CrossIcon';
 
 type MenuProps = {
   handleClose: () => void;
+  handleOpenPopup: () => void;
 };
 
-const Menu = ({ handleClose }: MenuProps) => {
+const Menu = ({ handleClose, handleOpenPopup }: MenuProps) => {
+  const closeButtonClickHandler = () => {
+    handleClose();
+  };
+
+  const mainButtonClickHandler = () => {
+    handleClose();
+    handleOpenPopup();
+  };
   return (
     <div className={styles.overlay}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarTop}>
-          <div className={styles.sidebarClose} onClick={handleClose}>
+          <div
+            className={styles.sidebarClose}
+            onClick={closeButtonClickHandler}
+          >
             <CrossIcon />
           </div>
           <ul className={styles.menuList}>
@@ -28,7 +40,9 @@ const Menu = ({ handleClose }: MenuProps) => {
           </ul>
         </div>
         <div className={styles.sidebarButton}>
-          <MainButton onClick={() => {}}>Оставить заявку</MainButton>
+          <MainButton handleOpenPopup={mainButtonClickHandler}>
+            Оставить заявку
+          </MainButton>
         </div>
       </div>
     </div>

@@ -1,16 +1,16 @@
 import React from 'react';
 import styles from './MainButton.module.css';
 
-type ButtonStyle = 'primary'|'secondary'|'outline'
+type ButtonStyle = 'primary' | 'secondary' | 'outline';
 
 const MainButton: React.FC<{
   children: React.ReactNode;
-  onClick: () => void;
+  handleOpenPopup: () => void;
   buttonStyle?: ButtonStyle;
-}> = ({onClick, buttonStyle, children}) => {
+}> = ({ handleOpenPopup, buttonStyle, children }) => {
   return (
     <button
-      onClick={onClick}
+      onClick={handleOpenPopup}
       className={`${styles.mainButton} ${styles[buttonStyle || 'primary']}`}
     >
       {children}

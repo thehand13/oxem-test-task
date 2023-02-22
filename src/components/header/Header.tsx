@@ -39,7 +39,7 @@ const Header: React.FC<{ onOpen: () => void }> = ({ onOpen }) => {
               ))}
             </ul>
           </nav>
-          <MainButton buttonStyle="outline" onClick={onOpen}>
+          <MainButton buttonStyle="outline" handleOpenPopup={onOpen}>
             Оставить заявку
           </MainButton>
         </div>
@@ -50,7 +50,12 @@ const Header: React.FC<{ onOpen: () => void }> = ({ onOpen }) => {
         >
           <MenuIcon />
         </div>
-        {showSidebar && <Menu handleClose={() => setShowSidebar(false)} />}
+        {showSidebar && (
+          <Menu
+            handleClose={() => setShowSidebar(false)}
+            handleOpenPopup={onOpen}
+          />
+        )}
       </div>
     </header>
   );

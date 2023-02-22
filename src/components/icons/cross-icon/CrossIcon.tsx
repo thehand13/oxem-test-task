@@ -12,16 +12,16 @@ const CrossIcon = () => {
       <path
         d="M22.5996 9.40039L9.40028 22.5997"
         stroke="black"
-        stroke-width="2.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M9.40039 9.40039L22.5997 22.5997"
         stroke="black"
         strokeWidth="2.75"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
