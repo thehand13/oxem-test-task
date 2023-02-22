@@ -81,31 +81,37 @@ const LeasingForm: React.FC<{ onOpen: () => void }> = (props) => {
         Рассчитайте стоимость автомобиля в лизинг
       </div>
       <div className={styles.inputContainer}>
-        <SliderInput
-          minValue={inputRanges.price.min}
-          maxValue={inputRanges.price.max}
-          value={priceState}
-          label={'Стоимость автомобиля'}
-          sign={'₽'}
-          handler={setPriceState}
-        />
-        <PercentInput
-          minValue={initialPayMinState}
-          maxValue={initialPayMaxState}
-          value={initialPayState}
-          percentValue={percentState}
-          label={'Первоначальный взнос'}
-          sign={'%'}
-          handler={setInitialPayState}
-        />
-        <SliderInput
-          minValue={inputRanges.duration.min}
-          maxValue={inputRanges.duration.max}
-          value={durationState}
-          label={'Срок лизинга'}
-          sign={'мес.'}
-          handler={setDurationState}
-        />
+        <div className={styles.inputWrapper}>
+          <SliderInput
+            minValue={inputRanges.price.min}
+            maxValue={inputRanges.price.max}
+            value={priceState}
+            label={'Стоимость автомобиля'}
+            sign={'₽'}
+            handler={setPriceState}
+          />
+        </div>
+        <div className={styles.inputWrapper}>
+          <PercentInput
+            minValue={initialPayMinState}
+            maxValue={initialPayMaxState}
+            value={initialPayState}
+            percentValue={percentState}
+            label={'Первоначальный взнос'}
+            sign={'%'}
+            handler={setInitialPayState}
+          />
+        </div>
+        <div className={styles.inputWrapper}>
+          <SliderInput
+            minValue={inputRanges.duration.min}
+            maxValue={inputRanges.duration.max}
+            value={durationState}
+            label={'Срок лизинга'}
+            sign={'мес.'}
+            handler={setDurationState}
+          />
+        </div>
       </div>
       <div className={styles.outputContainer}>
         <div className={styles.outputWrapper}>

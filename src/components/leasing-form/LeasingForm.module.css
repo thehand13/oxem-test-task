@@ -18,6 +18,7 @@
 }
 
 .outputContainer {
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin-top: 44px;
@@ -33,6 +34,13 @@
   height: 68px;
 }
 
+@media (min-width: 1439px) {
+  .inputWrapper,
+  .outputWrapper {
+    width: 31%;
+  }
+}
+
 @media (max-width: 1439px) {
   .leasingForm {
     margin-top: 80px;
@@ -44,15 +52,18 @@
     height: 421px;
   }
 
-  .mainButton {
-    width: 345px;
-    height: 68px;
-  }
-}
-
-@media (max-width: 1023px) {
   .outputContainer {
     flex-wrap: wrap;
+  }
+
+  .outputWrapper {
+    width: calc(100% / 2);
+  }
+
+  .mainButton {
+    margin-top: 44px;
+    width: 345px;
+    height: 68px;
   }
 }
 
@@ -74,6 +85,7 @@
   }
 
   .mainButton {
+    margin-top: 0px;
     font-size: 22px;
     line-height: 20px;
     width: 280px;
