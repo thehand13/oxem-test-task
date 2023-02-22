@@ -49,7 +49,7 @@ const Slide: React.FC<{ slides: ISlideComponents[]; onOpen: () => void }> = (
           {props.slides[slideIndex].description}
         </p>
         <MainButton
-          onClick={() => {
+          onClickHandler={() => {
             props.onOpen();
           }}
         >

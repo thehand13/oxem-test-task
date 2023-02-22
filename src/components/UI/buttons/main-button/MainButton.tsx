@@ -5,12 +5,12 @@ type ButtonStyle = 'primary' | 'secondary' | 'outline';
 
 const MainButton: React.FC<{
   children: React.ReactNode;
-  handleOpenPopup: () => void;
+  onClickHandler: () => void;
   buttonStyle?: ButtonStyle;
-}> = ({ handleOpenPopup, buttonStyle, children }) => {
+}> = ({ onClickHandler, buttonStyle, children }) => {
   return (
     <button
-      onClick={handleOpenPopup}
+      onClick={onClickHandler}
       className={`${styles.mainButton} ${styles[buttonStyle || 'primary']}`}
     >
       {children}

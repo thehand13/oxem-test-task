@@ -40,7 +40,7 @@ const Menu = ({ handleClose, handleOpenPopup }: MenuProps) => {
           </ul>
         </div>
         <div className={styles.sidebarButton}>
-          <MainButton handleOpenPopup={mainButtonClickHandler}>
+          <MainButton onClickHandler={mainButtonClickHandler}>
             Оставить заявку
           </MainButton>
         </div>

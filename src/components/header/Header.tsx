@@ -39,7 +39,7 @@ const Header: React.FC<{ onOpen: () => void }> = ({ onOpen }) => {
               ))}
             </ul>
           </nav>
-          <MainButton buttonStyle="outline" handleOpenPopup={onOpen}>
+          <MainButton buttonStyle="outline" onClickHandler={onOpen}>
             Оставить заявку
           </MainButton>
         </div>
